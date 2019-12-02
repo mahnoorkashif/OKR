@@ -77,7 +77,7 @@
         <!--Animation2-->
         <scene sceneID="KZ7-Td-dbo">
             <objects>
-                <viewController storyboardIdentifier="Animation2" id="GnU-cQ-Gay" customClass="Animation2" customModule="OKRTest2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Animation2" id="GnU-cQ-Gay" customClass="Animation2" customModule="OKR_CoreAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpL-Y3-jD5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,8 +105,68 @@
             </objects>
             <point key="canvasLocation" x="2451" y="21"/>
         </scene>
+        <!--Animation3-->
+        <scene sceneID="fjo-zZ-bgC">
+            <objects>
+                <viewController storyboardIdentifier="Animation3" id="SI9-Fl-5kX" customClass="Animation3" customModule="OKR_CoreAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2C1-e4-Rck">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Asset 12" translatesAutoresizingMaskIntoConstraints="NO" id="9uA-wz-qXz">
+                                <rect key="frame" x="177" y="427.5" width="60" height="41.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.58039215686274503" green="0.29411764705882354" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9uA-wz-qXz" firstAttribute="centerY" secondItem="2C1-e4-Rck" secondAttribute="centerY" id="2os-NA-wzN"/>
+                            <constraint firstItem="9uA-wz-qXz" firstAttribute="centerX" secondItem="2C1-e4-Rck" secondAttribute="centerX" id="Q0S-4t-Trb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yqO-9D-8AV"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="9uA-wz-qXz" id="ADf-b9-rh8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DO5-uW-OM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3157" y="21"/>
+        </scene>
+        <!--Animation4-->
+        <scene sceneID="7i2-Mj-b7e">
+            <objects>
+                <viewController storyboardIdentifier="Animation4" id="ZC0-pD-dt4" customClass="Animation4" customModule="OKR_CoreAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jku-HP-dcr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O97-kT-EpI">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.26274509800000001" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="M5C-7V-qIC"/>
+                                    <constraint firstAttribute="width" constant="100" id="koB-su-0Jb"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O97-kT-EpI" firstAttribute="centerY" secondItem="Jku-HP-dcr" secondAttribute="centerY" id="3Z8-xv-AS7"/>
+                            <constraint firstItem="O97-kT-EpI" firstAttribute="centerX" secondItem="Jku-HP-dcr" secondAttribute="centerX" id="3gA-Jx-ZF2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bfV-oX-Y9H"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="O97-kT-EpI" id="3y7-Fz-3oV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tId-ra-Wde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3833" y="21"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Asset 12" width="60" height="41.5"/>
         <image name="floorScan1" width="564" height="400"/>
     </resources>
 </document>

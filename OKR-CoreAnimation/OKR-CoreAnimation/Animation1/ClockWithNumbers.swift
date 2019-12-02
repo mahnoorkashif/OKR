@@ -211,10 +211,10 @@ extension ClockWithNumbers {
         label.textAlignment = .center
         label.text = "\(text)"
         label.textColor = .white
-        //        label.layer.borderWidth = 0.5
-        //        label.layer.cornerRadius = 7.5
-        //        label.layer.masksToBounds = true
-        //        label.layer.borderColor = UIColor.white.cgColor
+//        label.layer.borderWidth = 0.5
+//        label.layer.cornerRadius = 7.5
+//        label.layer.masksToBounds = true
+//        label.layer.borderColor = UIColor.white.cgColor
         label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         self.addSubview(label)
     }

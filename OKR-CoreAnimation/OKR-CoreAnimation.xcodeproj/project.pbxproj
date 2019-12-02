@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A506FA92394F4FB0010EE7B /* Animation3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A506FA82394F4FB0010EE7B /* Animation3.swift */; };
+		4A506FAC2395273C0010EE7B /* Animation4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A506FAB2395273C0010EE7B /* Animation4.swift */; };
 		4A9A11A0239121710057BB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A119F239121710057BB70 /* AppDelegate.swift */; };
 		4A9A11A2239121710057BB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A11A1239121710057BB70 /* ViewController.swift */; };
 		4A9A11A5239121710057BB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9A11A3239121710057BB70 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A506FA82394F4FB0010EE7B /* Animation3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation3.swift; sourceTree = "<group>"; };
+		4A506FAB2395273C0010EE7B /* Animation4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation4.swift; sourceTree = "<group>"; };
 		4A9A119C239121700057BB70 /* OKR-CoreAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OKR-CoreAnimation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9A119F239121710057BB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A9A11A1239121710057BB70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A506FA72394EC790010EE7B /* Animation3 */ = {
+			isa = PBXGroup;
+			children = (
+				4A506FA82394F4FB0010EE7B /* Animation3.swift */,
+			);
+			path = Animation3;
+			sourceTree = "<group>";
+		};
+		4A506FAA239527290010EE7B /* Animation4 */ = {
+			isa = PBXGroup;
+			children = (
+				4A506FAB2395273C0010EE7B /* Animation4.swift */,
+			);
+			path = Animation4;
+			sourceTree = "<group>";
+		};
 		4A9A1193239121700057BB70 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +89,8 @@
 				4A9A11B1239121960057BB70 /* Main */,
 				4A9A11B62391239E0057BB70 /* Animation1 */,
 				4A9A11B32391227A0057BB70 /* Animation2 */,
+				4A506FA72394EC790010EE7B /* Animation3 */,
+				4A506FAA239527290010EE7B /* Animation4 */,
 			);
 			path = "OKR-CoreAnimation";
 			sourceTree = "<group>";
@@ -183,8 +205,10 @@
 				4A9A11BA239124260057BB70 /* ClockView.swift in Sources */,
 				4A9A11B5239122EC0057BB70 /* Animation2.swift in Sources */,
 				4A9A11BC239124480057BB70 /* ClockWithNumbers.swift in Sources */,
+				4A506FA92394F4FB0010EE7B /* Animation3.swift in Sources */,
 				4A9A11A2239121710057BB70 /* ViewController.swift in Sources */,
 				4A9A11A0239121710057BB70 /* AppDelegate.swift in Sources */,
+				4A506FAC2395273C0010EE7B /* Animation4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

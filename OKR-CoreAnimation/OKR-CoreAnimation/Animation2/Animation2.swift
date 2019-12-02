@@ -10,7 +10,7 @@ import UIKit
 
 class Animation2: UIViewController {
 
-    @IBOutlet weak var imageView           : UIImageView!
+    @IBOutlet weak var imageView    : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
