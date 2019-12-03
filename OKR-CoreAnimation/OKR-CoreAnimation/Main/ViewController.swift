@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         tblView.delegate = self
         tblView.dataSource = self
     }

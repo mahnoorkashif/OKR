@@ -18,7 +18,12 @@ class Animation3: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        animateImageView()
+    }
+}
+
+extension Animation3 {
+    func animateImageView() {
         let scale = CGAffineTransform(scaleX: 2.0, y: 2.0)
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse], animations: {

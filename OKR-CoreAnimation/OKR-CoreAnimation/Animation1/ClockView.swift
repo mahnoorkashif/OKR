@@ -20,7 +20,6 @@ class ClockView: UIView {
     var currentSeconds  : Int?
     
     var lastHourVal     = 0.0
-    
     var shadowAngle     : CGFloat = 4.71238898038469
     
     override init(frame: CGRect) {

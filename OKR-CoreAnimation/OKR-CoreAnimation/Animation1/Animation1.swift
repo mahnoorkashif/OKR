@@ -35,7 +35,7 @@ extension Animation1 {
     func addClock() {
         let width: CGFloat = 240.0
         let height: CGFloat = 240.0
-        let clockView = ClockView(frame: CGRect(x: self.view.frame.size.width/2 - width/2, y: 80, width: width, height: height))
+        let clockView = ClockView(frame: CGRect(x: self.view.frame.size.width/2 - width/2, y: 2.5 * (self.navigationController?.navigationBar.frame.height ?? 100), width: width, height: height))
         clockView.backgroundColor = .clear
         clockView.layer.cornerRadius = clockView.frame.width/2
         clockView.layer.masksToBounds = true

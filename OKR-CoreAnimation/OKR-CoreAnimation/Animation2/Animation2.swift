@@ -18,10 +18,15 @@ class Animation2: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        animateImageView()
+    }
+}
+
+extension Animation2 {
+    func animateImageView() {
         let path = UIBezierPath()
-        let startPoint = CGPoint(x: self.view.center.x - 100, y: self.view.center.y)
         
+        let startPoint = CGPoint(x: self.view.center.x - 100, y: self.view.center.y)
         let endPoint = CGPoint(x: self.view.center.x + 100, y: self.view.center.y)
         
         path.move(to: startPoint)
@@ -52,4 +57,3 @@ class Animation2: UIViewController {
         self.view.layer.addSublayer(layer)
     }
 }
-
