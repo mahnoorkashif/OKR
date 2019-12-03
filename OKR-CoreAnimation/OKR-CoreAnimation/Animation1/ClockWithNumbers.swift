@@ -40,7 +40,7 @@ class ClockWithNumbers: UIView {
         
         let diff = Double(currentMinute ?? 60) / 60
         lastHourVal = Double(currentHour ?? 0) + diff
-        addHourLines()
+        addHourNumbers()
         addMinuteLines()
         addShadow(at: Double(currentSeconds ?? 0))
         addMinuteHand(at: Double(currentMinute ?? 0))
@@ -54,7 +54,7 @@ extension ClockWithNumbers {
         setNeedsDisplay()
     }
     
-    func addHourLines() {
+    func addHourNumbers() {
         let width = self.frame.width
         let height = self.frame.height
         let halfWidth: Double = Double(width/2)

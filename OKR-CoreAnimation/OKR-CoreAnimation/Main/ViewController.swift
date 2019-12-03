@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     let names = ["Animation 1", "Animation 2", "Animation 3", "Animation 4"]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tblView.delegate = self
