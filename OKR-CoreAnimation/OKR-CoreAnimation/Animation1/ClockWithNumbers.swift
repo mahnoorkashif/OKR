@@ -9,9 +9,6 @@
 import UIKit
 
 class ClockWithNumbers: UIView {
-    let hours            = 12
-    let minutes          = 60
-    let seconds          = 60
     var timer            = Timer()
     
     let numbers         = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2]
@@ -24,9 +21,19 @@ class ClockWithNumbers: UIView {
     var lastHourVal     = 0.0
     var shadowAngle     : CGFloat = 0.0
     
+    var width           : CGFloat = 0.0
+    var height          : CGFloat = 0.0
+    var halfWidth       : Double  = 0.0
+    var halfHeight      : Double  = 0.0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
+        
+        width           = self.frame.width
+        height          = self.frame.height
+        halfWidth       = Double(width/2)
+        halfHeight      = Double(height/2)
     }
     
     required init?(coder: NSCoder) {
@@ -40,12 +47,8 @@ class ClockWithNumbers: UIView {
         
         let diff = Double(currentMinute ?? 60) / 60
         lastHourVal = Double(currentHour ?? 0) + diff
-        addHourNumbers()
-        addMinuteLines()
-        addShadow(at: Double(currentSeconds ?? 0))
-        addMinuteHand(at: Double(currentMinute ?? 0))
-        addHourHand(at: lastHourVal)
-        addSecondHand(at: Double(currentSeconds ?? 0))
+        
+        drawClock()
     }
 }
 
@@ -54,12 +57,7 @@ extension ClockWithNumbers {
         setNeedsDisplay()
     }
     
-    func addHourNumbers() {
-        let width = self.frame.width
-        let height = self.frame.height
-        let halfWidth: Double = Double(width/2)
-        let halfHeight: Double = Double(height/2)
-        
+    func addHourNumbers(numberOfLines: Int) {
         let innerCircleRadius = halfWidth - 15.0
         let innerCircleDiameter = innerCircleRadius * 2
         
@@ -69,8 +67,8 @@ extension ClockWithNumbers {
         
         guard innerCircleDiameter <= Double(width) || innerCircleDiameter <= Double(height) else { return }
         
-        for i in 0..<hours {
-            let angle = CGFloat(i) * CGFloat(2 * Double.pi) / CGFloat(hours)
+        for i in 0..<numberOfLines {
+            let angle = CGFloat(i) * CGFloat(2 * Double.pi) / CGFloat(numberOfLines)
             if i == 9 {
                 shadowAngle = angle
             }
@@ -79,27 +77,18 @@ extension ClockWithNumbers {
         }
     }
     
-    func addMinuteLines() {
-        let width = self.frame.width
-        let height = self.frame.height
-        let halfWidth: Double = Double(width/2)
-        let halfHeight: Double = Double(height/2)
-        
-        let path = UIBezierPath()
-        
+    func addClockLines(lineLength: Double, lineWidth: CGFloat, numberOfLines: Int, pathColor: UIColor, path: UIBezierPath) {
         let innerCircleRadius = halfWidth - 13.0
         let innerCircleDiameter = innerCircleRadius * 2
         
-        let distance = 2.0
-        
-        let innerRadius: CGFloat = CGFloat(innerCircleRadius - distance)
-        let outerRadius: CGFloat = CGFloat(innerCircleRadius + distance)
+        let innerRadius: CGFloat = CGFloat(innerCircleRadius - lineLength)
+        let outerRadius: CGFloat = CGFloat(innerCircleRadius + lineLength)
         
         guard innerCircleDiameter <= Double(width) || innerCircleDiameter <= Double(height) else { return }
         
-        for i in 0..<minutes {
+        for i in 0..<numberOfLines {
             if (i % 5) != 0 {
-                let angle = CGFloat(i) * CGFloat(2 * Double.pi) / CGFloat(minutes)
+                let angle = CGFloat(i) * CGFloat(2 * Double.pi) / CGFloat(numberOfLines)
                 let inner = CGPoint(x: innerRadius * cos(angle) + CGFloat(halfWidth), y: innerRadius * sin(angle) + CGFloat(halfHeight))
                 let outer = CGPoint(x: outerRadius * cos(angle) + CGFloat(halfWidth), y: outerRadius * sin(angle) + CGFloat(halfHeight))
                 path.move(to: inner)
@@ -107,94 +96,31 @@ extension ClockWithNumbers {
             }
         }
         
-        path.lineWidth = 1.0
+        path.lineWidth = lineWidth
         
-        UIColor.white.setStroke()
+        pathColor.setStroke()
         path.stroke()
     }
     
-    func addHourHand(at position: Double) {
-        let width = self.frame.width
-        let height = self.frame.height
-        let halfWidth: Double = Double(width/2)
-        let halfHeight: Double = Double(height/2)
-        
-        let path = UIBezierPath()
-        
-        let hourHand: CGFloat = 65.0
-        
-        // the first angle is drawn at 3rd hour so subtracting 3 to draw the hand at the angle passed in parameter
-        let hourAngle = CGFloat(position - 3) * CGFloat(2 * Double.pi) / CGFloat(hours)
+    func addClockHand(at: Double, numberOfLines: Int, pathColor: UIColor, lineWidth: CGFloat, position: Double, handLength: CGFloat, path: UIBezierPath) {
+        let hourAngle = CGFloat(at - position) * CGFloat(2 * Double.pi) / CGFloat(numberOfLines)
         let center = CGPoint(x: CGFloat(halfWidth), y: CGFloat(halfHeight))
-        let hour = CGPoint(x: hourHand * cos(hourAngle) + CGFloat(halfWidth), y: hourHand * sin(hourAngle) + CGFloat(halfHeight))
+        let point = CGPoint(x: handLength * cos(hourAngle) + CGFloat(halfWidth), y: handLength * sin(hourAngle) + CGFloat(halfHeight))
         path.move(to: center)
-        path.addLine(to: hour)
+        path.addLine(to: point)
         
-        path.lineWidth = 2
+        path.lineWidth = lineWidth
         
-        #colorLiteral(red: 1, green: 0.5530688317, blue: 0.6159807326, alpha: 1).setStroke()
+        pathColor.setStroke()
         path.stroke()
     }
     
-    func addMinuteHand(at position: Double) {
-        let width = self.frame.width
-        let height = self.frame.height
-        let halfWidth: Double = Double(width/2)
-        let halfHeight: Double = Double(height/2)
-        
-        let path = UIBezierPath()
-        
-        let minuteHand: CGFloat = 80.0
-        
-        // the first angle is drawn at 15th minute so subtracting 15 to draw the hand at the angle passed in parameter
-        let minuteAngle = CGFloat(position - 15) * CGFloat(2 * Double.pi) / CGFloat(minutes)
-        let center = CGPoint(x: CGFloat(halfWidth), y: CGFloat(halfHeight))
-        let minute = CGPoint(x: minuteHand * cos(minuteAngle) + CGFloat(halfWidth), y: minuteHand * sin(minuteAngle) + CGFloat(halfHeight))
-        path.move(to: center)
-        path.addLine(to: minute)
-        
-        path.lineWidth = 1.5
-        
-        UIColor.white.setStroke()
-        path.stroke()
-    }
-    
-    func addSecondHand(at position: Double) {
-        let width = self.frame.width
-        let height = self.frame.height
-        let halfWidth: Double = Double(width/2)
-        let halfHeight: Double = Double(height/2)
-        
-        let path = UIBezierPath()
-        
-        let minuteHand: CGFloat = 90.0
-        
-        // the first angle is drawn at 15th second so subtracting 15 to draw the hand at the angle passed in parameter
-        let secondAngle = CGFloat(position - 15) * CGFloat(2 * Double.pi) / CGFloat(seconds)
-        let center = CGPoint(x: CGFloat(halfWidth), y: CGFloat(halfHeight))
-        let second = CGPoint(x: minuteHand * cos(secondAngle) + CGFloat(halfWidth), y: minuteHand * sin(secondAngle) + CGFloat(halfHeight))
-        path.move(to: center)
-        path.addLine(to: second)
-        
-        path.lineWidth = 1.5
-        
-        UIColor.orange.setFill()
-        path.fill()
-        UIColor.yellow.setStroke()
-        path.stroke()
-    }
-    
-    func addShadow(at position: Double) {
-        let width = self.frame.width
-        let height = self.frame.height
-        let halfWidth: Double = Double(width/2)
-        let halfHeight: Double = Double(height/2)
-        
+    func addShadow(at position: Double, numberOfLines: Int) {
         let path = UIBezierPath()
         
         let shadowRadius: CGFloat = CGFloat(halfWidth) - 15.0
         
-        let secondAngle = CGFloat(position - 15) * CGFloat(2 * Double.pi) / CGFloat(seconds)
+        let secondAngle = CGFloat(position - 15) * CGFloat(2 * Double.pi) / CGFloat(numberOfLines)
         let center = CGPoint(x: CGFloat(halfWidth), y: CGFloat(halfHeight))
         
         path.move(to: center)
@@ -212,5 +138,24 @@ extension ClockWithNumbers {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         self.addSubview(label)
+    }
+    
+    func drawClock() {
+        //hour labels
+        addHourNumbers(numberOfLines: 12)
+        
+        // minute lines
+        addClockLines(lineLength: 2.0, lineWidth: 1.0, numberOfLines: 60, pathColor: .white, path: UIBezierPath())
+        
+        addShadow(at: Double(currentSeconds ?? 0), numberOfLines: 60)
+        
+        //minute hand
+        addClockHand(at: Double(currentMinute ?? 0), numberOfLines: 60, pathColor: .white, lineWidth: 1.5, position: 15, handLength: 80.0, path: UIBezierPath())
+        
+        //hour hand
+        addClockHand(at: lastHourVal, numberOfLines: 12, pathColor: #colorLiteral(red: 1, green: 0.5530688317, blue: 0.6159807326, alpha: 1), lineWidth: 2.0, position: 3, handLength: 65.0, path: UIBezierPath())
+        
+        //second hand
+        addClockHand(at: Double(currentSeconds ?? 0), numberOfLines: 60, pathColor: .yellow, lineWidth: 1.5, position: 15, handLength: 90.0, path: UIBezierPath())
     }
 }
