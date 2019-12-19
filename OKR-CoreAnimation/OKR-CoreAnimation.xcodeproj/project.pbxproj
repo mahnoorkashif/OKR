@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4A506FA92394F4FB0010EE7B /* Animation3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A506FA82394F4FB0010EE7B /* Animation3.swift */; };
 		4A506FAC2395273C0010EE7B /* Animation4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A506FAB2395273C0010EE7B /* Animation4.swift */; };
+		4A5454FB23AB5FED00819BE6 /* Animation5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5454FA23AB5FED00819BE6 /* Animation5.swift */; };
+		4A5454FE23AB64F100819BE6 /* Animation6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5454FD23AB64F100819BE6 /* Animation6.swift */; };
 		4A721E562397904E00985F4C /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A721E552397904E00985F4C /* ClockView.swift */; };
 		4A9A11A0239121710057BB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A119F239121710057BB70 /* AppDelegate.swift */; };
 		4A9A11A2239121710057BB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A11A1239121710057BB70 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		4A506FA82394F4FB0010EE7B /* Animation3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation3.swift; sourceTree = "<group>"; };
 		4A506FAB2395273C0010EE7B /* Animation4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation4.swift; sourceTree = "<group>"; };
+		4A5454FA23AB5FED00819BE6 /* Animation5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation5.swift; sourceTree = "<group>"; };
+		4A5454FD23AB64F100819BE6 /* Animation6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation6.swift; sourceTree = "<group>"; };
 		4A721E552397904E00985F4C /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		4A9A119C239121700057BB70 /* OKR-CoreAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OKR-CoreAnimation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9A119F239121710057BB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,22 @@
 			path = Animation4;
 			sourceTree = "<group>";
 		};
+		4A5454F923AB5FB400819BE6 /* Animation5 */ = {
+			isa = PBXGroup;
+			children = (
+				4A5454FA23AB5FED00819BE6 /* Animation5.swift */,
+			);
+			path = Animation5;
+			sourceTree = "<group>";
+		};
+		4A5454FC23AB64D100819BE6 /* Animation6 */ = {
+			isa = PBXGroup;
+			children = (
+				4A5454FD23AB64F100819BE6 /* Animation6.swift */,
+			);
+			path = Animation6;
+			sourceTree = "<group>";
+		};
 		4A9A1193239121700057BB70 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +111,8 @@
 				4A9A11B32391227A0057BB70 /* Animation2 */,
 				4A506FA72394EC790010EE7B /* Animation3 */,
 				4A506FAA239527290010EE7B /* Animation4 */,
+				4A5454F923AB5FB400819BE6 /* Animation5 */,
+				4A5454FC23AB64D100819BE6 /* Animation6 */,
 			);
 			path = "OKR-CoreAnimation";
 			sourceTree = "<group>";
@@ -124,8 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				4A9A11B7239123C30057BB70 /* Animation1.swift */,
-				4A9A11BB239124480057BB70 /* ClockWithNumbers.swift */,
 				4A721E552397904E00985F4C /* ClockView.swift */,
+				4A9A11BB239124480057BB70 /* ClockWithNumbers.swift */,
 			);
 			path = Animation1;
 			sourceTree = "<group>";
@@ -204,9 +226,11 @@
 				4A9A11B8239123C30057BB70 /* Animation1.swift in Sources */,
 				4A721E562397904E00985F4C /* ClockView.swift in Sources */,
 				4A9A11B5239122EC0057BB70 /* Animation2.swift in Sources */,
+				4A5454FB23AB5FED00819BE6 /* Animation5.swift in Sources */,
 				4A9A11BC239124480057BB70 /* ClockWithNumbers.swift in Sources */,
 				4A506FA92394F4FB0010EE7B /* Animation3.swift in Sources */,
 				4A9A11A2239121710057BB70 /* ViewController.swift in Sources */,
+				4A5454FE23AB64F100819BE6 /* Animation6.swift in Sources */,
 				4A9A11A0239121710057BB70 /* AppDelegate.swift in Sources */,
 				4A506FAC2395273C0010EE7B /* Animation4.swift in Sources */,
 			);

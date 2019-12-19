@@ -158,4 +158,4 @@ extension ClockWithNumbers {
         //second hand
         addClockHand(at: Double(currentSeconds ?? 0), numberOfLines: 60, pathColor: .yellow, lineWidth: 1.5, position: 15, handLength: 90.0, path: UIBezierPath())
     }
-}
+} 
