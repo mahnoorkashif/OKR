@@ -9,18 +9,35 @@
 import UIKit
 
 class Animation6: UIViewController {
+    
+    var timer : Timer?
+    var count : Double = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
-    @IBAction func beginAnimation(_ sender: UIButton) {
+    @objc private func updateTimer() {
         startAnimation()
+        count += 1
+        if count == 20 {
+            timer?.invalidate()
+            timer = nil
+            count = 0
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     private func createView(frame: CGRect, color: UIColor) -> UIView {
         let viewToAnimate = UIView(frame: frame)
         viewToAnimate.backgroundColor = color
+        viewToAnimate.layer.cornerRadius = viewToAnimate.frame.width/2
+        viewToAnimate.layer.borderColor = UIColor.black.cgColor
+        viewToAnimate.layer.borderWidth = 1.0
         return viewToAnimate
     }
     
@@ -81,8 +98,8 @@ class Animation6: UIViewController {
         let leftX    : CGFloat   = 60
         let rightX   : CGFloat   = view.frame.width - 60
         
-        let topY = 2.5 * (self.navigationController?.navigationBar.frame.height ?? 100)
-        let bottomY = view.frame.height - 40
+        let topY = 3.0 * (self.navigationController?.navigationBar.frame.height ?? 100)
+        let bottomY = view.frame.height - 60
         
         // starting points
         let view1StartPoint = CGPoint(x: leftX, y: topY)
@@ -112,7 +129,7 @@ class Animation6: UIViewController {
         let view4PositionAnimation = createPositionAnimation(startPoint: view4StartPoint, endPoint: endPoint, duration: 6)
         let scaleAnimation = createScaleAnimation(startPoint: 1.0, endPoint: 0.4, duration: 2.0)
         let rotationAnimation = createRotationAnimation(duration: 1.3)
-        let opacityAnimation = createOpacityAnimation(startPoint: 1.0, endPoint: 0.5, duration: 1.5)
+        let opacityAnimation = createOpacityAnimation(startPoint: 1.0, endPoint: 0.7, duration: 1.5)
         
         // add animations
         addAnimations(viewToAnimate: view1, positionAnimation: view1PositionAnimation, scaleAnimation: scaleAnimation, rotationAnimation: rotationAnimation, opacityAnimation: opacityAnimation)

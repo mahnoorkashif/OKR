@@ -197,20 +197,7 @@
                     <view key="view" contentMode="scaleToFill" id="KjY-sL-JxW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWr-by-HfY">
-                                <rect key="frame" x="178.5" y="836" width="57" height="30"/>
-                                <state key="normal" title="Animate"/>
-                                <connections>
-                                    <action selector="beginAnimation:" destination="jg6-kS-0bB" eventType="touchUpInside" id="KqI-ZM-HEy"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="kWr-by-HfY" firstAttribute="centerX" secondItem="KjY-sL-JxW" secondAttribute="centerX" id="1se-ZF-MWO"/>
-                            <constraint firstAttribute="bottom" secondItem="kWr-by-HfY" secondAttribute="bottom" constant="30" id="HoD-MZ-NW8"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JUd-bz-eqD"/>
                     </view>
                 </viewController>
