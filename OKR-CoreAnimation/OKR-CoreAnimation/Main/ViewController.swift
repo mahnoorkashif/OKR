@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tblView: UITableView!
     
-    let names = ["Animation 1", "Animation 2", "Animation 3", "Animation 4", "Animation 5", "Animation 6"]
+    let names = ["Animation 1", "Animation 2", "Animation 3", "Animation 4", "Animation 5", "Animation 6", "Animation 7"]
     
     
     
@@ -54,6 +54,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(vc, animated: true)
         case 5:
             guard let vc = storyboard.instantiateViewController(withIdentifier: "Animation6") as? Animation6 else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 6:
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "Animation7") as? Animation7 else { return }
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             break
