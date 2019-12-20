@@ -27,7 +27,7 @@ class Animation1: UIViewController {
 }
 
 extension Animation1 {
-    func addGradient() {
+    private func addGradient() {
         let colors : [UIColor] = [#colorLiteral(red: 1, green: 0.6078431373, blue: 0.5725490196, alpha: 1), #colorLiteral(red: 0.2990502451, green: 0.7843137255, blue: 0.7647058824, alpha: 1)]
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors.map { $0.cgColor }
@@ -35,7 +35,7 @@ extension Animation1 {
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func addClock() {
+    private func addClock() {
         let width: CGFloat = 240.0
         let height: CGFloat = 240.0
         clockView = ClockView(frame: CGRect(x: self.view.frame.size.width/2 - width/2, y: 2.5 * (self.navigationController?.navigationBar.frame.height ?? 100), width: width, height: height))
@@ -46,7 +46,7 @@ extension Animation1 {
         self.view.addSubview(clockView)
     }
     
-    func addNumberClock() {
+    private func addNumberClock() {
         let width: CGFloat = 240.0
         let height: CGFloat = 240.0
         clockWithNumbers = ClockWithNumbers(frame: CGRect(x: self.view.frame.size.width/2 - width/2, y: (2.5 * (self.navigationController?.navigationBar.frame.height ?? 100)) + ((clockView?.frame.height ?? 0) + 40), width: width, height: height))

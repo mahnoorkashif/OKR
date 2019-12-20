@@ -23,7 +23,7 @@ class Animation2: UIViewController {
 }
 
 extension Animation2 {
-    func animateImageView() {
+    private func animateImageView() {
         let path = UIBezierPath()
         
         let startPoint = CGPoint(x: self.view.center.x - 100, y: self.view.center.y)

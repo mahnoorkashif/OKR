@@ -19,7 +19,7 @@ class Animation4: UIViewController {
 }
 
 extension Animation4 {
-    func animateButtonRadius() {
+    private func animateButtonRadius() {
         let old = button.layer.cornerRadius
         let new = button.frame.width
         

@@ -23,7 +23,7 @@ class Animation3: UIViewController {
 }
 
 extension Animation3 {
-    func animateImageView() {
+    private func animateImageView() {
         let scale = CGAffineTransform(scaleX: 2.0, y: 2.0)
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse], animations: {

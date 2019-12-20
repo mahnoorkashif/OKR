@@ -220,6 +220,21 @@
             </objects>
             <point key="canvasLocation" x="3190" y="717"/>
         </scene>
+        <!--Animation8-->
+        <scene sceneID="FMh-wB-cSZ">
+            <objects>
+                <viewController storyboardIdentifier="Animation8" id="Wf6-xs-QhV" customClass="Animation8" customModule="OKR_CoreAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TRE-4t-eMM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6RK-JP-YLI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GlY-sr-Eiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3899" y="717"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Asset 12" width="60" height="41.5"/>

@@ -51,11 +51,11 @@ class ClockView: UIView {
 }
 
 extension ClockView {
-    @objc func UpdateTimer() {
+    @objc private func UpdateTimer() {
         setNeedsDisplay()
     }
     
-    func addClockOutline(lineWidth: CGFloat) {
+    private func addClockOutline(lineWidth: CGFloat) {
         let outerCircleRadius = halfWidth
         let outerCircleDiameter = (outerCircleRadius) * 2
         
@@ -69,7 +69,7 @@ extension ClockView {
         path.stroke()
     }
     
-    func addClockLines(lineLength: Double, lineWidth: CGFloat, numberOfLines: Int, pathColor: UIColor, path: UIBezierPath) {
+    private func addClockLines(lineLength: Double, lineWidth: CGFloat, numberOfLines: Int, pathColor: UIColor, path: UIBezierPath) {
         let innerCircleRadius = halfWidth - 10.0
         let innerCircleDiameter = innerCircleRadius * 2
         
@@ -95,7 +95,7 @@ extension ClockView {
         path.stroke()
     }
     
-    func addClockHand(at: Double, numberOfLines: Int, pathColor: UIColor, lineWidth: CGFloat, position: Double, handLength: CGFloat, path: UIBezierPath) {
+    private func addClockHand(at: Double, numberOfLines: Int, pathColor: UIColor, lineWidth: CGFloat, position: Double, handLength: CGFloat, path: UIBezierPath) {
         
         let hourAngle = CGFloat(at - position) * CGFloat(2 * Double.pi) / CGFloat(numberOfLines)
         let center = CGPoint(x: CGFloat(halfWidth), y: CGFloat(halfHeight))
@@ -109,7 +109,7 @@ extension ClockView {
         path.stroke()
     }
     
-    func addShadow(at position: Double, numberOfLines: Int) {
+    private func addShadow(at position: Double, numberOfLines: Int) {
         let path = UIBezierPath()
         
         let shadowRadius: CGFloat = CGFloat(halfWidth)
@@ -124,7 +124,7 @@ extension ClockView {
         path.fill()
     }
     
-    func drawClock() {
+    private func drawClock() {
         addClockOutline(lineWidth: 3.0)
         
         addShadow(at: Double(currentSeconds ?? 0), numberOfLines: 60)

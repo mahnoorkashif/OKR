@@ -53,11 +53,11 @@ class ClockWithNumbers: UIView {
 }
 
 extension ClockWithNumbers {
-    @objc func UpdateTimer() {
+    @objc private func UpdateTimer() {
         setNeedsDisplay()
     }
     
-    func addHourNumbers(numberOfLines: Int) {
+    private func addHourNumbers(numberOfLines: Int) {
         let innerCircleRadius = halfWidth - 15.0
         let innerCircleDiameter = innerCircleRadius * 2
         
@@ -77,7 +77,7 @@ extension ClockWithNumbers {
         }
     }
     
-    func addClockLines(lineLength: Double, lineWidth: CGFloat, numberOfLines: Int, pathColor: UIColor, path: UIBezierPath) {
+    private func addClockLines(lineLength: Double, lineWidth: CGFloat, numberOfLines: Int, pathColor: UIColor, path: UIBezierPath) {
         let innerCircleRadius = halfWidth - 13.0
         let innerCircleDiameter = innerCircleRadius * 2
         
@@ -102,7 +102,7 @@ extension ClockWithNumbers {
         path.stroke()
     }
     
-    func addClockHand(at: Double, numberOfLines: Int, pathColor: UIColor, lineWidth: CGFloat, position: Double, handLength: CGFloat, path: UIBezierPath) {
+    private func addClockHand(at: Double, numberOfLines: Int, pathColor: UIColor, lineWidth: CGFloat, position: Double, handLength: CGFloat, path: UIBezierPath) {
         let hourAngle = CGFloat(at - position) * CGFloat(2 * Double.pi) / CGFloat(numberOfLines)
         let center = CGPoint(x: CGFloat(halfWidth), y: CGFloat(halfHeight))
         let point = CGPoint(x: handLength * cos(hourAngle) + CGFloat(halfWidth), y: handLength * sin(hourAngle) + CGFloat(halfHeight))
@@ -115,7 +115,7 @@ extension ClockWithNumbers {
         path.stroke()
     }
     
-    func addShadow(at position: Double, numberOfLines: Int) {
+    private func addShadow(at position: Double, numberOfLines: Int) {
         let path = UIBezierPath()
         
         let shadowRadius: CGFloat = CGFloat(halfWidth) - 15.0
@@ -130,7 +130,7 @@ extension ClockWithNumbers {
         path.fill()
     }
     
-    func addLabel(text: Int, center: CGPoint) {
+    private func addLabel(text: Int, center: CGPoint) {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 15, height: 15))
         label.center = center
         label.textAlignment = .center
@@ -140,7 +140,7 @@ extension ClockWithNumbers {
         self.addSubview(label)
     }
     
-    func drawClock() {
+    private func drawClock() {
         //hour labels
         addHourNumbers(numberOfLines: 12)
         
