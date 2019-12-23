@@ -13,6 +13,7 @@
 		4A5454FE23AB64F100819BE6 /* Animation6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5454FD23AB64F100819BE6 /* Animation6.swift */; };
 		4A54550123AB94F300819BE6 /* Animation7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A54550023AB94F300819BE6 /* Animation7.swift */; };
 		4A721E562397904E00985F4C /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A721E552397904E00985F4C /* ClockView.swift */; };
+		4A751D5623B09FA20059E70A /* Animation9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A751D5523B09FA20059E70A /* Animation9.swift */; };
 		4A9A11A0239121710057BB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A119F239121710057BB70 /* AppDelegate.swift */; };
 		4A9A11A2239121710057BB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9A11A1239121710057BB70 /* ViewController.swift */; };
 		4A9A11A5239121710057BB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9A11A3239121710057BB70 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		4A5454FD23AB64F100819BE6 /* Animation6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation6.swift; sourceTree = "<group>"; };
 		4A54550023AB94F300819BE6 /* Animation7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation7.swift; sourceTree = "<group>"; };
 		4A721E552397904E00985F4C /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		4A751D5523B09FA20059E70A /* Animation9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation9.swift; sourceTree = "<group>"; };
 		4A9A119C239121700057BB70 /* OKR-CoreAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OKR-CoreAnimation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9A119F239121710057BB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A9A11A1239121710057BB70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 			path = Animation7;
 			sourceTree = "<group>";
 		};
+		4A751D5423B09F7F0059E70A /* Animation9 */ = {
+			isa = PBXGroup;
+			children = (
+				4A751D5523B09FA20059E70A /* Animation9.swift */,
+			);
+			path = Animation9;
+			sourceTree = "<group>";
+		};
 		4A9A1193239121700057BB70 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 				4A5454FC23AB64D100819BE6 /* Animation6 */,
 				4A5454FF23AB94D400819BE6 /* Animation7 */,
 				4AF3349623ACA180006F2F3C /* Animation8 */,
+				4A751D5423B09F7F0059E70A /* Animation9 */,
 			);
 			path = "OKR-CoreAnimation";
 			sourceTree = "<group>";
@@ -251,6 +262,7 @@
 				4AF3349823ACA19B006F2F3C /* Animation8.swift in Sources */,
 				4A9A11B5239122EC0057BB70 /* Animation2.swift in Sources */,
 				4A5454FB23AB5FED00819BE6 /* Animation5.swift in Sources */,
+				4A751D5623B09FA20059E70A /* Animation9.swift in Sources */,
 				4A9A11BC239124480057BB70 /* ClockWithNumbers.swift in Sources */,
 				4A506FA92394F4FB0010EE7B /* Animation3.swift in Sources */,
 				4A9A11A2239121710057BB70 /* ViewController.swift in Sources */,

@@ -18,7 +18,6 @@ class Animation8: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startPoint = CGPoint(x: 30, y: self.view.center.y)
         addPath()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
@@ -30,7 +29,7 @@ class Animation8: UIViewController {
             count = 0
         }
         if count % 2 == 0 {
-            let imageView = UIImageView(frame: CGRect(x: startPoint?.x ?? 0.0, y: startPoint?.y ?? 0.0, width: 20, height: 20))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             imageView.image = #imageLiteral(resourceName: "Star")
             imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
             imageView.tintColor = .random
@@ -38,7 +37,7 @@ class Animation8: UIViewController {
             count += 1
         }
         else {
-            let animationView = createView(frame: CGRect(x: startPoint?.x ?? 0.0, y: startPoint?.y ?? 0.0, width: 15, height: 15), color: .random, cornerRadius: 7.5)
+            let animationView = createView(frame: CGRect(x: 0, y: 0, width: 15, height: 15), color: .random, cornerRadius: 7.5)
             animateViews(animationView: animationView)
             count += 1
         }
@@ -57,6 +56,7 @@ class Animation8: UIViewController {
     }
     
     private func addPath() {
+        startPoint = CGPoint(x: Int.random(in: 0...Int(view.frame.width)), y: Int.random(in: 0...Int(view.frame.height)))
         path.move(to: startPoint ?? CGPoint.zero)
         
         var previousPoint = startPoint

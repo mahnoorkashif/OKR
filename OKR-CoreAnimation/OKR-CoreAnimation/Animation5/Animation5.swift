@@ -31,7 +31,7 @@ class Animation5: UIViewController {
             check = true
         } else if check == true {
             view.layer.removeAllAnimations()
-            sender.setTitle("CLICK TO ANIMATE 🤪", for: .normal)
+            sender.setTitle("CLICK TO ANIMATE", for: .normal)
             check = false
         }
     }
