@@ -1,0 +1,109 @@
+//
+//  Animation10.swift
+//  OKR-CoreAnimation
+//
+//  Created by Mahnoor Khan on 24/12/2019.
+//  Copyright © 2019 Mahnoor Khan. All rights reserved.
+//
+
+import UIKit
+
+class Animation10: UIViewController {
+    
+    var button: UIButton?
+    var animationView: UIView?
+    
+    var check = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initUI()
+    }
+}
+
+extension Animation10 {
+    private func initUI() {
+        let diameter: CGFloat = 65.0
+        let radius: CGFloat = diameter / 2
+        let centreX = self.view.center.x
+        
+        let path = UIBezierPath(ovalIn: CGRect(x: (centreX - radius), y: self.view.center.y, width: diameter, height: diameter))
+                
+        let layer          = CAShapeLayer()
+        layer.path          = path.cgPath
+        layer.strokeColor   = UIColor.white.cgColor
+        layer.lineWidth     = 6.0
+        layer.fillColor     = nil
+        
+        self.view.layer.addSublayer(layer)
+        
+        let diff: CGFloat = 10.0
+        let viewDiameter = diameter - diff
+        
+        animationView = UIView(frame: CGRect(x: centreX - radius + diff/2, y: self.view.center.y + diff/2, width: viewDiameter, height: viewDiameter))
+        animationView?.backgroundColor = .red
+        animationView?.layer.cornerRadius = (animationView?.frame.width ?? 0) / 2
+        
+        guard let animationView = animationView else { return }
+        
+        self.view.addSubview(animationView)
+        
+        let buttonDiff: CGFloat = 30.0
+        setButton(x: (centreX - radius - buttonDiff/2), y: self.view.center.y - buttonDiff/2, w: diameter + buttonDiff, h: diameter + buttonDiff)
+    }
+    
+    private func setButton(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+        button = UIButton(frame: CGRect(x: x, y: y, width: w, height: h))
+        button?.backgroundColor = .clear //#colorLiteral(red: 0.2352941176, green: 0.2352941176, blue: 0.262745098, alpha: 0.3)
+        
+        guard let button = button else { return }
+        
+        self.view.addSubview(button)
+        
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+    }
+}
+
+extension Animation10 {
+    @objc func buttonAction(sender: UIButton!) {
+        let duration = 0.25
+        let endpoint: CGFloat = 0.5
+        let startPoint: CGFloat = 1.0
+        let oldVal = animationView?.layer.cornerRadius ?? 0.0
+        if check == false {
+            let scaleAnimation = createScaleAnimation(startPoint: startPoint, endPoint: endpoint, duration: duration)
+            let cornerAnimation = cornerRadiusAnimation(oldValue: oldVal, newValue: 8, duration: duration)
+            animationView?.layer.add(scaleAnimation, forKey: "transform.scale")
+            animationView?.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+            check = true
+        } else if check == true {
+            animationView?.layer.removeAllAnimations()
+            check = false
+        }
+    }
+    
+    private func createScaleAnimation(startPoint: CGFloat, endPoint: CGFloat, duration: Double) -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: "transform.scale")
+        animation.fromValue = startPoint
+        animation.toValue = endPoint
+        animation.duration = duration
+        animation.fillMode = .forwards
+        animation.repeatCount = 1
+        animation.isRemovedOnCompletion = false
+        return animation
+    }
+    
+    private func cornerRadiusAnimation(oldValue: CGFloat, newValue: CGFloat, duration: Double) -> CABasicAnimation {
+        let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
+        cornerAnimation.fromValue = oldValue
+        cornerAnimation.toValue = newValue
+        cornerAnimation.duration = duration
+        cornerAnimation.fillMode = .forwards
+        cornerAnimation.repeatCount = 1
+        cornerAnimation.isRemovedOnCompletion = false
+        return cornerAnimation
+    }
+}
+
+extension Animation10: CAAnimationDelegate {
+}

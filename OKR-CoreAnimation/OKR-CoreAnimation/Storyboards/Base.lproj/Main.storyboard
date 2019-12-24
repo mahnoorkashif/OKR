@@ -248,7 +248,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMW-5c-3AY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4629" y="371"/>
+            <point key="canvasLocation" x="1754" y="1414"/>
+        </scene>
+        <!--Animation10-->
+        <scene sceneID="rzp-8l-MXu">
+            <objects>
+                <viewController storyboardIdentifier="Animation10" id="b8D-85-66z" customClass="Animation10" customModule="OKR_CoreAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g7i-RJ-MHt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CX1-QO-ufa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oVK-Wb-Bso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2480" y="1414"/>
         </scene>
     </scenes>
     <resources>

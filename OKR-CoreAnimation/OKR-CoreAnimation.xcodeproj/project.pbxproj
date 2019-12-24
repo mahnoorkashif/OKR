@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3FBCB523B2124600024609 /* Animation10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3FBCB423B2124600024609 /* Animation10.swift */; };
 		4A506FA92394F4FB0010EE7B /* Animation3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A506FA82394F4FB0010EE7B /* Animation3.swift */; };
 		4A506FAC2395273C0010EE7B /* Animation4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A506FAB2395273C0010EE7B /* Animation4.swift */; };
 		4A5454FB23AB5FED00819BE6 /* Animation5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5454FA23AB5FED00819BE6 /* Animation5.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A3FBCB423B2124600024609 /* Animation10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation10.swift; sourceTree = "<group>"; };
 		4A506FA82394F4FB0010EE7B /* Animation3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation3.swift; sourceTree = "<group>"; };
 		4A506FAB2395273C0010EE7B /* Animation4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation4.swift; sourceTree = "<group>"; };
 		4A5454FA23AB5FED00819BE6 /* Animation5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation5.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A3FBCB323B2122F00024609 /* Animation10 */ = {
+			isa = PBXGroup;
+			children = (
+				4A3FBCB423B2124600024609 /* Animation10.swift */,
+			);
+			path = Animation10;
+			sourceTree = "<group>";
+		};
 		4A506FA72394EC790010EE7B /* Animation3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 				4A5454FF23AB94D400819BE6 /* Animation7 */,
 				4AF3349623ACA180006F2F3C /* Animation8 */,
 				4A751D5423B09F7F0059E70A /* Animation9 */,
+				4A3FBCB323B2122F00024609 /* Animation10 */,
 			);
 			path = "OKR-CoreAnimation";
 			sourceTree = "<group>";
@@ -267,6 +278,7 @@
 				4A506FA92394F4FB0010EE7B /* Animation3.swift in Sources */,
 				4A9A11A2239121710057BB70 /* ViewController.swift in Sources */,
 				4A5454FE23AB64F100819BE6 /* Animation6.swift in Sources */,
+				4A3FBCB523B2124600024609 /* Animation10.swift in Sources */,
 				4A9A11A0239121710057BB70 /* AppDelegate.swift in Sources */,
 				4A506FAC2395273C0010EE7B /* Animation4.swift in Sources */,
 			);
