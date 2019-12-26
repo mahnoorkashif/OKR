@@ -83,7 +83,7 @@ class Animation8: UIViewController {
         
         animationView.layer.add(animation, forKey: "position")
         
-        let layer          = CAShapeLayer()
+        let layer           = CAShapeLayer()
         layer.path          = path.cgPath
 //        layer.strokeColor   = UIColor.black.cgColor
         layer.lineWidth     = 1.0

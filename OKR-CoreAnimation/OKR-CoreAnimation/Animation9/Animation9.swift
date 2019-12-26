@@ -38,7 +38,7 @@ extension Animation9 {
             path.move(to: startPoint)
             path.addLine(to: CGPoint(x: i, y: height))
                         
-            let layer          = CAShapeLayer()
+            let layer           = CAShapeLayer()
             layer.path          = path.cgPath
 //            layer.strokeColor   = UIColor.black.cgColor
             layer.lineWidth     = 1.0
@@ -72,7 +72,7 @@ extension Animation9 {
         
         starView.layer.add(animation, forKey: "position")
         
-        let layer          = CAShapeLayer()
+        let layer           = CAShapeLayer()
         layer.path          = path.cgPath
         
         self.view.layer.addSublayer(layer)

@@ -26,21 +26,22 @@ extension Animation10 {
         let diameter: CGFloat = 65.0
         let radius: CGFloat = diameter / 2
         let centreX = self.view.center.x
+        let centreY = self.view.center.y
         
-        let path = UIBezierPath(ovalIn: CGRect(x: (centreX - radius), y: self.view.center.y, width: diameter, height: diameter))
+        let path = UIBezierPath(ovalIn: CGRect(x: (centreX - radius), y: (centreY - radius), width: diameter, height: diameter))
                 
-        let layer          = CAShapeLayer()
+        let layer           = CAShapeLayer()
         layer.path          = path.cgPath
         layer.strokeColor   = UIColor.white.cgColor
         layer.lineWidth     = 6.0
         layer.fillColor     = nil
         
         self.view.layer.addSublayer(layer)
+                
+        let diff: CGFloat = 10.0 // difference between heights and widths of circles
+        let viewDiameter = diameter - diff // diameter for inner circle - red
         
-        let diff: CGFloat = 10.0
-        let viewDiameter = diameter - diff
-        
-        animationView = UIView(frame: CGRect(x: centreX - radius + diff/2, y: self.view.center.y + diff/2, width: viewDiameter, height: viewDiameter))
+        animationView = UIView(frame: CGRect(x: centreX - radius + diff/2, y: self.view.center.y - radius + diff/2, width: viewDiameter, height: viewDiameter))
         animationView?.backgroundColor = .red
         animationView?.layer.cornerRadius = (animationView?.frame.width ?? 0) / 2
         
@@ -49,7 +50,7 @@ extension Animation10 {
         self.view.addSubview(animationView)
         
         let buttonDiff: CGFloat = 30.0
-        setButton(x: (centreX - radius - buttonDiff/2), y: self.view.center.y - buttonDiff/2, w: diameter + buttonDiff, h: diameter + buttonDiff)
+        setButton(x: (centreX - radius - buttonDiff/2), y: self.view.center.y - radius - buttonDiff/2, w: diameter + buttonDiff, h: diameter + buttonDiff)
     }
     
     private func setButton(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
@@ -59,7 +60,7 @@ extension Animation10 {
         guard let button = button else { return }
         
         self.view.addSubview(button)
-        
+                
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
 }
@@ -103,7 +104,4 @@ extension Animation10 {
         cornerAnimation.isRemovedOnCompletion = false
         return cornerAnimation
     }
-}
-
-extension Animation10: CAAnimationDelegate {
 }

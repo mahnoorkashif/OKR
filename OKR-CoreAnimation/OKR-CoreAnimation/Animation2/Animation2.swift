@@ -47,7 +47,7 @@ extension Animation2 {
         
         imageView.layer.add(animation, forKey: "position")
         
-        let layer          = CAShapeLayer()
+        let layer           = CAShapeLayer()
         layer.path          = path.cgPath
         layer.strokeColor   = UIColor.white.cgColor
         layer.lineWidth     = 1.0
