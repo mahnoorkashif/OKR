@@ -75,18 +75,22 @@ extension Animation10 {
 
 extension Animation10 {
     @objc func buttonAction(sender: UIButton!) {
-        let duration = 0.25
+        let duration = 0.20
         let endpoint: CGFloat = 0.5
         let startPoint: CGFloat = 1.0
         let oldVal = animationView?.layer.cornerRadius ?? 0.0
+        let newVal: CGFloat = 5.0
         if check == false {
             let scaleAnimation = createScaleAnimation(startPoint: startPoint, endPoint: endpoint, duration: duration)
-            let cornerAnimation = cornerRadiusAnimation(oldValue: oldVal, newValue: 8, duration: duration)
+            let cornerAnimation = cornerRadiusAnimation(oldValue: oldVal, newValue: newVal, duration: duration)
             animationView?.layer.add(scaleAnimation, forKey: "transform.scale")
             animationView?.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
             check = true
         } else if check == true {
-            animationView?.layer.removeAllAnimations()
+            let scaleAnimation = createScaleAnimation(startPoint: endpoint, endPoint: startPoint, duration: duration)
+            let cornerAnimation = cornerRadiusAnimation(oldValue: newVal, newValue: oldVal, duration: duration)
+            animationView?.layer.add(scaleAnimation, forKey: "transform.scale")
+            animationView?.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
             check = false
         }
     }
