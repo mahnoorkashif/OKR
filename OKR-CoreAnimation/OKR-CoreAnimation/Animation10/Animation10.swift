@@ -25,10 +25,11 @@ extension Animation10 {
     private func initUI() {
         let diameter: CGFloat = 65.0
         let radius: CGFloat = diameter / 2
-        let centreX = self.view.center.x
-        let centreY = self.view.center.y
         
-        let path = UIBezierPath(ovalIn: CGRect(x: (centreX - radius), y: (centreY - radius), width: diameter, height: diameter))
+        let pathX : CGFloat = self.view.center.x - radius
+        let pathY : CGFloat = self.view.center.y - radius
+        
+        let path = UIBezierPath(ovalIn: CGRect(x: pathX, y: pathY, width: diameter, height: diameter))
                 
         let layer           = CAShapeLayer()
         layer.path          = path.cgPath
@@ -41,7 +42,10 @@ extension Animation10 {
         let diff: CGFloat = 10.0 // difference between heights and widths of circles
         let viewDiameter = diameter - diff // diameter for inner circle - red
         
-        animationView = UIView(frame: CGRect(x: centreX - radius + diff/2, y: self.view.center.y - radius + diff/2, width: viewDiameter, height: viewDiameter))
+        let viewX = pathX + diff/2
+        let viewY = pathY + diff/2
+        
+        animationView = UIView(frame: CGRect(x: viewX, y: viewY, width: viewDiameter, height: viewDiameter))
         animationView?.backgroundColor = .red
         animationView?.layer.cornerRadius = (animationView?.frame.width ?? 0) / 2
         
@@ -50,7 +54,11 @@ extension Animation10 {
         self.view.addSubview(animationView)
         
         let buttonDiff: CGFloat = 30.0
-        setButton(x: (centreX - radius - buttonDiff/2), y: self.view.center.y - radius - buttonDiff/2, w: diameter + buttonDiff, h: diameter + buttonDiff)
+        
+        let buttonX = pathX - buttonDiff/2
+        let buttonY = pathY - buttonDiff/2
+        
+        setButton(x: buttonX, y: buttonY, w: diameter + buttonDiff, h: diameter + buttonDiff)
     }
     
     private func setButton(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
