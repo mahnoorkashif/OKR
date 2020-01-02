@@ -78,17 +78,17 @@ extension Animation10 {
         let duration = 0.20
         let endpoint: CGFloat = 0.5
         let startPoint: CGFloat = 1.0
-        let oldVal = animationView?.layer.cornerRadius ?? 0.0
-        let newVal: CGFloat = 5.0
+        let currentCornerRadius = animationView?.layer.cornerRadius ?? 0.0
+        let newCornerRadius: CGFloat = 5.0
         if check == false {
             let scaleAnimation = createScaleAnimation(startPoint: startPoint, endPoint: endpoint, duration: duration)
-            let cornerAnimation = cornerRadiusAnimation(oldValue: oldVal, newValue: newVal, duration: duration)
+            let cornerAnimation = cornerRadiusAnimation(oldValue: currentCornerRadius, newValue: newCornerRadius, duration: duration)
             animationView?.layer.add(scaleAnimation, forKey: "transform.scale")
             animationView?.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
             check = true
         } else if check == true {
             let scaleAnimation = createScaleAnimation(startPoint: endpoint, endPoint: startPoint, duration: duration)
-            let cornerAnimation = cornerRadiusAnimation(oldValue: newVal, newValue: oldVal, duration: duration)
+            let cornerAnimation = cornerRadiusAnimation(oldValue: newCornerRadius, newValue: currentCornerRadius, duration: duration)
             animationView?.layer.add(scaleAnimation, forKey: "transform.scale")
             animationView?.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
             check = false
